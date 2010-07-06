@@ -1,6 +1,7 @@
 require 'yaml'
 require 'pingdom'
 
+
 class PingrRails
 
 

@@ -241,7 +241,7 @@ class Pingdom
   class LastOutage
     def initialize(obj)
       @name  = obj.checkName
-      @time  = obj.lastDown.to_time
+      @time  = obj.lastDown.nil? ? nil : obj.lastDown.to_time
     end
     attr_reader :name, :time
   end
