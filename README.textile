@@ -1,4 +1,4 @@
-pingr-rails is an rails plugin for accessing the Pingdom API using "Pingr":http://github.com/chris/pingr  
+pingr-rails is a rails plugin for accessing the Pingdom API using "Pingr":http://github.com/chris/pingr  
 
 h2. Requirements
 
@@ -21,7 +21,7 @@ You can then call methods on the __PingrRails__ class
 e.g. <pre><code> PingrRails.current_states </code></pre>
 
 available methods:
-
+<pre><code>
 * downtime_summary(check, from, to)
 * responsetime_summary(check, from, to, resolution = Report_ResolutionEnum::DAILY, locs = nil)
 * outages(check, from, to, page=nil)
@@ -30,3 +30,4 @@ available methods:
 * locations
 * current_states
 * last_outages
+</code></pre>
