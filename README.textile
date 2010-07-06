@@ -1,12 +1,12 @@
-Pingr is a Ruby library for accessing the Pingdom API.  It provides a thorfile so you can execute its actions from the command line.
+pingr-rails is an rails plugin for accessing the Pingdom API using "Pingr":http://github.com/chris/pingr  
 
 h2. Requirements
 
-Install the soap4r and thor gems.
+Install the soap4r (and thor gems if you want to use the command line version).
 
 h2. Usage
 
-You will need to create a "creds.yml" file in the pingr directory.  It should look like:
+You will need to create a "pingdom.yml" file the __config__ directory.  It should look like:
 
 <pre><code>
 :username: someemail@example.com
@@ -16,8 +16,17 @@ You will need to create a "creds.yml" file in the pingr directory.  It should lo
 
 Obviously replace your email/login, password, and Pingdom API keys appropriately.
 
-Use thor to call the various actions.  Try <code>thor -T</code> to see the available items from within the pingr directory.  For example:
+You can then call methods on the __PingrRails__ class
 
-<code>thor pingr:checks</code>
+e.g. <pre><code> PingrRails.current_states </code></pre>
 
-to get a list of your Pingdom checks.
+available methods:
+
+* downtime_summary(check, from, to)
+* responsetime_summary(check, from, to, resolution = Report_ResolutionEnum::DAILY, locs = nil)
+* outages(check, from, to, page=nil)
+* raw_data(check, from, to, page=nil)
+* checks
+* locations
+* current_states
+* last_outages

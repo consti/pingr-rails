@@ -1,7 +1,7 @@
 require 'yaml'
 require 'pingdom'
 
-module PingrRails
+class PingrRails
 
 
   CONFIG_DIR = File.join(RAILS_ROOT,'config','pingdom.yml')
