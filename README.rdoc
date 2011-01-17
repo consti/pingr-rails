@@ -1,0 +1,33 @@
+pingr-rails is a rails plugin for accessing the Pingdom API using "Pingr":http://github.com/chris/pingr  
+
+h2. Requirements
+
+Install the soap4r (and thor gems if you want to use the command line version).
+
+h2. Usage
+
+You will need to create a "pingdom.yml" file the __config__ directory.  It should look like:
+
+<pre><code>
+:username: someemail@example.com
+:password: YourPingdomPassword
+:api_key: 13c9a18ee27cafebabe4a72dead3beef
+</code></pre>
+
+Obviously replace your email/login, password, and Pingdom API keys appropriately.
+
+You can then call methods on the __PingrRails__ class
+
+e.g. <pre><code> PingrRails.current_states </code></pre>
+
+available methods:
+<pre><code>
+* downtime_summary(check, from, to)
+* responsetime_summary(check, from, to, resolution = Report_ResolutionEnum::DAILY, locs = nil)
+* outages(check, from, to, page=nil)
+* raw_data(check, from, to, page=nil)
+* checks
+* locations
+* current_states
+* last_outages
+</code></pre>
